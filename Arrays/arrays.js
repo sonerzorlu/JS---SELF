@@ -156,7 +156,9 @@ console.log(cars);
 
 console.log(cars.reverse());
 
-
+const number = [12,45,2,88,19,7,9,1,3]
+console.log(number.sort((a,b)=> b-a));
+console.log(number.sort((a,b)=> a-b));
 
 
 
