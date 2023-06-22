@@ -166,3 +166,25 @@ console.log(number.sort((a,b)=> a-b));
 //?================================================
 //?             DIZI ERISIM METOTLARI
 //?================================================
+const sayilar = [3, 5, 2, "4",
+"four", 3, "4",
+"bes","1"]
+
+console.log(sayilar.indexOf(3));
+console.log(sayilar.lastIndexOf(3));
+console.log(sayilar.includes(3));
+console.log(sayilar.toString());
+console.log(sayilar.join(""));
+console.log(sayilar.sort((a,b)=>b-a));
+
+let data = [3,1,5,7,8,910,22,3]
+console.log(++data[5]);
+data = data.sort((a,b)=>b-a).join(",");
+console.log(data);
+console.log(sayilar);
+console.log(sayilar.toString());
+
+console.log(cars);
+console.log(cars.slice(2,4));
+console.log(cars.slice(2));
+console.log(cars.slice(1));
