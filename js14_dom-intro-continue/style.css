@@ -1,0 +1,13 @@
+.red {
+  color: red;
+}
+.center {
+  text-align: center;
+}
+.bg-tomato {
+  background-color: tomato;
+}
+body{
+  color: white;
+  background-color: black;
+}
