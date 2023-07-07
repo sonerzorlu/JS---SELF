@@ -20,3 +20,59 @@
 
 // .env  (environment)  - gitignore
 // const URL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.API_KEY}`
+
+// const getNews = async () => {
+//     // const API_KEY ="1a1a999e0d7240a6bd2dead87bcca78e"
+//     const URL = ` https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.API_KEY}`
+//     const res = await fetch(URL)
+// }
+const getNews = async () => {
+    const API_KEY = "1a1a999e0d7240a6bd2dead87bcca78e"
+    const URL = `https://newsapi.org/v2/top-headlines?country=de&apiKey=${API_KEY}`
+  
+    try {
+      const res = await fetch(URL)
+      if (!res.ok) {
+        throw new Error("Something went wrong")
+      }
+      const data = await res.json()
+        console.log(data.articles)
+        renderNews(data.article)
+     
+    } catch (error) {
+      renderError(error)
+    }
+  }
+  getNews()
+
+  const renderNews = (news)=>{
+    const newsDiv = document.getElementById('news')
+
+    news.array.forEach(item => {
+        const {title,description,urlToImage,url} = item
+        newsDiv.innerHTML+=`
+        <div class="col-md-6 col-lg-4 col-xl-3">
+        <div class="card">
+           <img src="${urlToImage}" class="card-img-top" alt="...">
+           <div class="card-body">
+              <h5 class="card-title">${title}</h5>
+              <p class="card-text">${description}</p>
+              <a href="${url}" target="_blank" class="btn btn-warning">Detail</a>
+           </div>
+        </div>
+     </div>
+    
+        `
+    });
+
+
+  }
+
+  const renderError = (err)=>{
+    console.log(err);
+
+    const newDiv = document.getElementById('news')
+    newDiv.innerHTML = `
+    <h2>something went wrong</h2>
+    <img src="./img/404.png" alt="" /> `
+  }
