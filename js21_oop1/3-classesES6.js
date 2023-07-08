@@ -26,7 +26,7 @@ class Book{
   getAge(){
     return `${new Date().getFullYear() - this.year}`
   }
-  
+ 
 }
 
 
@@ -50,3 +50,4 @@ class Magazin extends Book {
 }
 const mag1= new Magazin('sre','Einstein',1930,'november')
 console.log(mag1);
+console.log(mag1.getAge());
